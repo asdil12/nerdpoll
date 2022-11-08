@@ -12,7 +12,14 @@ print(json.dumps({
     "start_url": "nerdpoll.py?%s" % os.environ.get('QUERY_STRING', ''),
     "display": "standalone",
     "theme_color": "#242e3a",
-    "background_color": "#242e3a"
+    "background_color": "#242e3a",
+	"icons": [
+		{   
+			"src": "../logo.png",
+			"sizes": "640x640",
+			"type": "image/png"
+		}   
+	]
 }))
 
 """
