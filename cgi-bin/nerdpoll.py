@@ -153,7 +153,10 @@ print(f"<h3 id='vote'>{poll_msg.poll.poll.question.replace(' ', '&nbsp;').replac
 print('<table>')
 for oid, option in options.items():
 	if len(option['voters']):
-		print(f"<tr class='h'><td colspan='2'>{option['text']}</td><td class='peps'>{len(option['voters'])} Leute</td></tr>")
+		voter_string='Mensch'
+		if len(option['voters']) > 1:
+			voter_string +='en'
+		print(f"<tr class='h'><td colspan='2'>{option['text']}</td><td class='peps'>{len(option['voters'])} {voter_string}</td></tr>")
 	for uid in option['voters']:
 		name = (voters[uid]['first_name'] + ' ' + voters[uid]['last_name']).strip() or voters[uid]['username']
 		if name != voters[uid]['username'] and voters[uid]['username']:
